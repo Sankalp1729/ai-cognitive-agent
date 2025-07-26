@@ -1,0 +1,14 @@
+[
+  {
+    "subject": "Meeting Tomorrow",
+    "body": "Reminder for the meeting scheduled tomorrow at 10 AM.",
+    "sender": "manager@example.com",
+    "timestamp": "2025-07-25"
+  },
+  {
+    "subject": "Discount Offer",
+    "body": "Get 50% off on your next purchase.",
+    "sender": "promo@example.com",
+    "timestamp": "2025-07-24"
+  }
+]

@@ -1,0 +1,31 @@
+{
+    "articles": {
+        "Later": -2,
+        "Reply": -2,
+        "Archive": -1,
+        "Forward": 1,
+        "Tag": -18,
+        "yes": 42
+    },
+    "emails": {
+        "Add to Calendar": -11,
+        "Archive": -11,
+        "yes": 30
+    },
+    "notes": {
+        "Add to Calendar": -1,
+        "Tag": -14,
+        "Forward": -1,
+        "Later": -2,
+        "yes": 18,
+        "archive": 5
+    },
+    "tasks": {
+        "Archive": -2,
+        "Reply": -2,
+        "Forward": -1,
+        "Later": -9,
+        "reply": 13,
+        "yes": 5
+    }
+}

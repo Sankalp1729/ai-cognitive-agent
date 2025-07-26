@@ -1,0 +1,62 @@
+[
+    {
+        "item": {
+            "type": "articles",
+            "content": "AI in 2025 Artificial Intelligence is transforming businesses worldwide..."
+        },
+        "final_action": "Later",
+        "confidence": 0.8,
+        "reason": "Random fallback",
+        "feedback_status": "approved",
+        "hidden_image": "outputs/hidden_articles_1.png",
+        "hidden_data_verified": "Action: Later, Confidence: 0.8"
+    },
+    {
+        "item": {
+            "type": "emails",
+            "content": "Meeting Tomorrow Reminder for the meeting scheduled tomorrow at 10 AM."
+        },
+        "final_action": "Add to Calendar",
+        "confidence": 0.75,
+        "reason": "Detected scheduling keywords",
+        "feedback_status": "approved",
+        "hidden_image": "outputs/hidden_emails_2.png",
+        "hidden_data_verified": "Action: Add to Calendar, Confidence: 0.75"
+    },
+    {
+        "item": {
+            "type": "emails",
+            "content": "Discount Offer Get 50% off on your next purchase."
+        },
+        "final_action": "Archive",
+        "confidence": 0.96,
+        "reason": "Promotional content",
+        "feedback_status": "approved",
+        "hidden_image": "outputs/hidden_emails_3.png",
+        "hidden_data_verified": "Action: Archive, Confidence: 0.96"
+    },
+    {
+        "item": {
+            "type": "tasks",
+            "content": "Finish Project Report"
+        },
+        "final_action": "Later",
+        "confidence": 0.78,
+        "reason": "Detected as task",
+        "feedback_status": "approved",
+        "hidden_image": "outputs/hidden_tasks_4.png",
+        "hidden_data_verified": "Action: Later, Confidence: 0.78"
+    },
+    {
+        "item": {
+            "type": "notes",
+            "content": "Important Link https://docs.python.org/3/"
+        },
+        "final_action": "Tag",
+        "confidence": 0.95,
+        "reason": "Detected as note",
+        "feedback_status": "approved",
+        "hidden_image": "outputs/hidden_notes_5.png",
+        "hidden_data_verified": "Action: Tag, Confidence: 0.95"
+    }
+]

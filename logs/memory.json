@@ -1,0 +1,7 @@
+{
+    "senders": {
+        "manager@example.com": 13,
+        "promo@example.com": 12
+    },
+    "patterns": {}
+}
