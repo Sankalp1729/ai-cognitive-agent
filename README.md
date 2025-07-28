@@ -1,32 +1,52 @@
-# 🤖 AI-COGNITIVE-AGENT
+# 🤖 AI Cognitive Agent
 
-AI-COGNITIVE-AGENT is an intelligent system that:
-- Classifies multi-type content (emails, articles, tasks, notes)
-- Uses user feedback for decision refinement (with optional RL toggle)
-- Embeds decisions inside images using **steganography** for secure storage
-- Maintains logs for audit and verification
-
----
-
-## ✅ Features
-✔ **Decision Classification** – Automatically detects action based on content  
-✔ **User Feedback Loop** – Confirm or override system decisions  
-✔ **Emoji Support** – Visual feedback (👍 👎 🚫)  
-✔ **Reinforcement Learning Toggle** – Enable/disable feedback effect via `settings.py`  
-✔ **Steganography Integration** – Hide decision data inside PNG images  
-✔ **Logs in JSON** – Full history stored for verification  
+An intelligent cognitive assistant that:
+- Classifies incoming content (emails, articles, tasks, notes)
+- Suggests the best action using a rule-based + RL-enhanced model
+- Accepts user feedback to improve over time (Reinforcement Learning)
+- Uses **Steganography with AES encryption** to hide classification info in images
+- Provides an **interactive dashboard** for simulation & feedback
 
 ---
 
-## ✅ Project Structure
+## ✅ Key Features
 
-# settings.py
-USE_FEEDBACK = False
+✔ **Interactive Feedback Loop (👍 / 👎)**  
+- Confirm or change the suggested action.
+- Reinforcement Learning updates weights dynamically.
 
-## ✅ Screenshots
+✔ **Steganography Component (Enhanced)**  
+- Hides action + confidence securely in an image using AES encryption.
+- Allows custom image upload or uses a generated image.
 
-### After Adding Emojis
-![After Adding Emojis](screenshots/ss%20after%20adding%20emojis.png)
+✔ **User-Friendly Dashboard**  
+- Built with **Streamlit**.
+- Includes:
+  - Text input area & sample texts
+  - Prediction results with reason & confidence
+  - RL status and updates
+  - Feedback buttons
+  - Steganography visualization (embed + extract)
 
-### After Disabling RL
-![After Disabling RL](screenshots/ss%20after%20disable%20rl.png)
+✔ **Action Reasons & RL Updates Visible**  
+- Shows why an action was chosen.
+- Displays RL weight adjustments after feedback.
+
+✔ **Confidence Feedback Shapes Learning**  
+- Positive feedback boosts confidence for correct actions.
+- Negative feedback penalizes wrong predictions and boosts chosen action.
+- Weights stored in `weights.json` for persistence.
+
+---
+
+## ✅ How It Works
+
+1. **Input Content** → Email, task, article, or note.
+2. **Predict Action** → Schedule, Ignore, Mark Important, Summarize.
+3. **Feedback** → Confirm (👍) or Change (👎).
+4. **RL Learning** → Confidence adjusts over time based on feedback.
+5. **Steganography** → Hides classification details in an image.
+
+## Access Dashboard
+http://localhost:8501
+
