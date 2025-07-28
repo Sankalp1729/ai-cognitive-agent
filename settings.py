@@ -1,2 +1,2 @@
 # settings.py
-USE_FEEDBACK = False  # Set to False to disable feedback learning (RL)
+USE_FEEDBACK = True  # Set to False to disable feedback learning (RL)

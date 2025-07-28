@@ -4,59 +4,59 @@
             "type": "articles",
             "content": "AI in 2025 Artificial Intelligence is transforming businesses worldwide..."
         },
-        "final_action": "Later",
-        "confidence": 0.8,
-        "reason": "Random fallback",
-        "feedback_status": "approved",
+        "final_action": "Read Later",
+        "confidence": 0.75,
+        "reason": "General content; no priority keyword.",
+        "feedback_status": "Confirmed \ud83d\udc4d",
         "hidden_image": "outputs/hidden_articles_1.png",
-        "hidden_data_verified": "Action: Later, Confidence: 0.8"
+        "hidden_data_verified": "Action: Read Later, Confidence: 0.75"
     },
     {
         "item": {
             "type": "emails",
             "content": "Meeting Tomorrow Reminder for the meeting scheduled tomorrow at 10 AM."
         },
-        "final_action": "Add to Calendar",
+        "final_action": "Schedule",
         "confidence": 0.75,
-        "reason": "Detected scheduling keywords",
-        "feedback_status": "approved",
+        "reason": "Detected a meeting keyword.",
+        "feedback_status": "Confirmed \ud83d\udc4d",
         "hidden_image": "outputs/hidden_emails_2.png",
-        "hidden_data_verified": "Action: Add to Calendar, Confidence: 0.75"
+        "hidden_data_verified": "Action: Schedule, Confidence: 0.75"
     },
     {
         "item": {
             "type": "emails",
             "content": "Discount Offer Get 50% off on your next purchase."
         },
-        "final_action": "Archive",
-        "confidence": 0.96,
-        "reason": "Promotional content",
-        "feedback_status": "approved",
+        "final_action": "forward",
+        "confidence": 0.75,
+        "reason": "Detected promotional content.",
+        "feedback_status": "Updated \ud83d\udc4e",
         "hidden_image": "outputs/hidden_emails_3.png",
-        "hidden_data_verified": "Action: Archive, Confidence: 0.96"
+        "hidden_data_verified": "Action: forward, Confidence: 0.75"
     },
     {
         "item": {
             "type": "tasks",
             "content": "Finish Project Report"
         },
-        "final_action": "Later",
-        "confidence": 0.78,
-        "reason": "Detected as task",
-        "feedback_status": "approved",
+        "final_action": "Complete Task",
+        "confidence": 0.75,
+        "reason": "Detected task-related keyword.",
+        "feedback_status": "Confirmed \ud83d\udc4d",
         "hidden_image": "outputs/hidden_tasks_4.png",
-        "hidden_data_verified": "Action: Later, Confidence: 0.78"
+        "hidden_data_verified": "Action: Complete Task, Confidence: 0.75"
     },
     {
         "item": {
             "type": "notes",
             "content": "Important Link https://docs.python.org/3/"
         },
-        "final_action": "Tag",
-        "confidence": 0.95,
-        "reason": "Detected as note",
-        "feedback_status": "approved",
+        "final_action": "Save Link",
+        "confidence": 0.75,
+        "reason": "Contains a URL link.",
+        "feedback_status": "Confirmed \ud83d\udc4d",
         "hidden_image": "outputs/hidden_notes_5.png",
-        "hidden_data_verified": "Action: Tag, Confidence: 0.95"
+        "hidden_data_verified": "Action: Save Link, Confidence: 0.75"
     }
 ]

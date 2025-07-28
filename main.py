@@ -1,10 +1,10 @@
+# main.py
 import json
 import os
 from cognitive_modules.decision_classifier import DecisionClassifier
 from cognitive_modules.feedback_handler import FeedbackHandler
 from cognitive_modules.stego_handler import StegoHandler
 
-# Sample inputs
 items = [
     {"type": "articles", "content": "AI in 2025 Artificial Intelligence is transforming businesses worldwide..."},
     {"type": "emails", "content": "Meeting Tomorrow Reminder for the meeting scheduled tomorrow at 10 AM."},
@@ -35,7 +35,8 @@ if __name__ == "__main__":
         classification["action"] = chosen_action
         classification["feedback_status"] = feedback_result["status"]
 
-        # Embed message in image
+        print(f"✅ Feedback Status: {feedback_result['status']} {feedback_result['emoji']}")
+
         hidden_msg = f"Action: {classification['action']}, Confidence: {classification['confidence']}"
         img_path = f"outputs/hidden_{item['type']}_{idx}.png"
         stego.embed_message(None, img_path, hidden_msg)
@@ -58,6 +59,5 @@ if __name__ == "__main__":
         json.dump(logs, f, indent=4)
 
     print("\n✅ Processing completed! Check logs/actions.json and outputs/ for PNGs.")
-
 
 

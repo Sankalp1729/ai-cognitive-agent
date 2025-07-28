@@ -1,39 +1,40 @@
+# cognitive_modules/stego_handler.py
 from PIL import Image
+import stepic
+from cryptography.fernet import Fernet
+import os
 
 class StegoHandler:
-    def embed_message(self, image_path, output_path, message):
-        img = Image.new('RGB', (300, 100), color=(255, 255, 255))  # Create white image
-        pixels = img.load()
-        message_bits = ''.join(format(ord(c), '08b') for c in message)
-        message_bits += '00000000'  # Null terminator
+    def __init__(self):
+        # Manage encryption key
+        self.key_file = "encryption.key"
+        if not os.path.exists(self.key_file):
+            key = Fernet.generate_key()
+            with open(self.key_file, "wb") as f:
+                f.write(key)
+        else:
+            with open(self.key_file, "rb") as f:
+                key = f.read()
+        self.cipher = Fernet(key)
 
-        idx = 0
-        for y in range(img.size[1]):
-            for x in range(img.size[0]):
-                if idx < len(message_bits):
-                    r, g, b = pixels[x, y]
-                    r = (r & ~1) | int(message_bits[idx])
-                    pixels[x, y] = (r, g, b)
-                    idx += 1
+    def embed_message(self, img=None, save_path="outputs/hidden.png", message=""):
+        # Encrypt the message
+        encrypted_msg = self.cipher.encrypt(message.encode())
 
-        img.save(output_path)
+        # Create new image if none is provided
+        if img is None:
+            img = Image.new("RGB", (300, 300), color=(255, 255, 255))
 
-    def extract_message(self, image_path):
-        img = Image.open(image_path)
-        pixels = img.load()
-        bits = ""
+        # Encode encrypted message in image
+        encoded_img = stepic.encode(img, encrypted_msg)
+        encoded_img.save(save_path, "PNG")
+        return save_path
 
-        for y in range(img.size[1]):
-            for x in range(img.size[0]):
-                r, g, b = pixels[x, y]
-                bits += str(r & 1)
-
-        chars = [bits[i:i+8] for i in range(0, len(bits), 8)]
-        message = ""
-        for c in chars:
-            char = chr(int(c, 2))
-            if char == '\x00':  # Stop at null terminator
-                break
-            message += char
-        return message
-
+    def extract_message(self, img_path):
+        img = Image.open(img_path)
+        encrypted_msg = stepic.decode(img)
+        try:
+            decrypted_msg = self.cipher.decrypt(encrypted_msg).decode()
+            return decrypted_msg
+        except Exception:
+            return "❌ Decryption failed or image corrupted"
